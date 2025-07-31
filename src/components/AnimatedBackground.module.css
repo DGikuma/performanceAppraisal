@@ -1,0 +1,25 @@
+.particle {
+  position: absolute;
+  bottom: -40px;
+  left: var(--left);
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--color);
+  border-radius: 9999px;
+  opacity: var(--opacity);
+  filter: blur(1px);
+  animation: floatUp var(--duration) linear infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(var(--drift), -50vh) scale(1.2);
+  }
+  100% {
+    transform: translate(calc(var(--drift) * 2), -100vh) scale(1);
+  }
+}

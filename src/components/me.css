@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(10, 10, 25, 0.95), rgba(0, 0, 0, 0.8));
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease;
+}
+
+.loader-overlay.fade-out {
+  animation: fadeOut 0.8s ease forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(1.05);
+    pointer-events: none;
+  }
+}
+
+.loader-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.loader-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  z-index: 2;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px #00e0ff, 0 0 20px #00e0ff;
+  animation: glowText 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glowText {
+  from { text-shadow: 0 0 10px #00e0ff; }
+  to { text-shadow: 0 0 20px #00e0ff, 0 0 30px #00e0ff; }
+}
+
+.loader-svg {
+  width: 200px;
+  height: 200px;
+  transform: rotate(-90deg);
+  filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.3));
+}
+
+.loader-circle-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 8;
+}
+
+.loader-circle-fg {
+  fill: none;
+  stroke: url(#grad1);
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.2s ease;
+  filter: drop-shadow(0 0 6px #00e0ff);
+}
+
+.spinning-ring {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+  transform-origin: center;
+}
+
+.ring-1 {
+  stroke: url(#ringGrad1);
+  animation: spin1 6s linear infinite;
+  filter: drop-shadow(0 0 4px #ff00cc);
+}
+
+.ring-2 {
+  stroke: url(#ringGrad2);
+  animation: spin2 9s linear infinite reverse;
+  filter: drop-shadow(0 0 4px #00ffcc);
+}
+
+.ring-3 {
+  stroke: url(#ringGrad3);
+  animation: spin3 12s linear infinite;
+  filter: drop-shadow(0 0 4px #ffff00);
+}
+
+@keyframes spin1 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin2 {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes spin3 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(720deg); }
+}
