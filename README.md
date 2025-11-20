@@ -125,7 +125,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 For issues or feature requests, please submit [issues](https://github.com/DGikuma/performanceAppraisal/issues).
 
-For further questions, reach out to [your-email@example.com].
+For further questions, reach out to [denniskimani918@gmail.com].
 
 ```
 **Note:** Replace placeholders like technology stacks, email, and commands with your actual choices and contact information.
